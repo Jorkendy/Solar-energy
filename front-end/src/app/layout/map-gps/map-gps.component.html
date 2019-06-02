@@ -1,0 +1,17 @@
+<div class="container">
+    <h1 fxLayoutAlign="center">Maps of Stations</h1>
+
+    <div class="option" fxLayout="row">
+        <button mat-raised-button color="primary" (click)="mapType='terrain'">Terrain</button>
+        <button mat-raised-button color="warn" (click)="mapType='satellite'">Satellite</button>
+        <button mat-raised-button color="accent" (click)="mapType='roadmap'">Road Map</button>
+    </div>
+
+    <div class="content">
+        <agm-map [latitude]="10.771474" [longitude]="106.658090" [mapTypeId]="mapType" [zoom]="15">
+            <agm-marker *ngFor="let item of listOfStation" [latitude]="item.lat" [longitude]="item.long">
+                <agm-info-window><a routerLink="/statistics/{{item['uuid']}}">{{ item.name }}</a></agm-info-window>
+            </agm-marker>
+        </agm-map>
+    </div>
+</div>

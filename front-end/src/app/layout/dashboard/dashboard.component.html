@@ -1,0 +1,42 @@
+<div class="mb-20" fxLayout="column">
+    <div fxFlex="50">
+        <select id="voltage-month-select" [formControl]="month">
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+        </select>
+    </div>
+    <div fxFlex="50">
+        <select id="station-select" [formControl]="station">
+            <option value="9e4052c9-cdd1-45af-9174-96dbaa1fd40e">Station 1</option>
+            <option value="e95d468b-8973-47a6-8700-4b2c538f38d5">Ho Chi Minh City University of Technology</option>
+        </select>
+    </div>
+    <div fxFlex="100" style="margin-top: 20px">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Voltage in month</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <canvas baseChart width="500" height="200" [datasets]="lineChartVoltage" [labels]="lineChartDate" [options]="lineChartOptions"
+                        [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"></canvas>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div class="mb-20" fxLayout="row">
+    <div fxFlex>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Temperature in month</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <canvas baseChart width="500" height="200" [datasets]="lineChartTemperature" [labels]="lineChartDate" [options]="lineChartOptions"
+                        [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"></canvas>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+{
+  "express": {
+    "port": 3000
+  },
+  "auth": {
+    "jwt_secret": "test_1"
+  },
+  "loglevel": {
+    "error": 0,
+    "warn": 1,
+    "info": 2,
+    "verbose": 3,
+    "debug": 4,
+    "silly": 5
+  },
+  "mongo": {
+    "mongo_uri": "mongodb://phamtrungvinh:Vinh1234@ds131676.mlab.com:31676/solar-sun"
+  }
+}

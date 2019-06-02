@@ -1,0 +1,16 @@
+<div id="sidebar">
+  <mat-nav-list>
+    <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/introduce']">
+      <mat-icon class="sidenav-icon">group</mat-icon> Introduce
+    </a>
+    <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/dashboard']">
+      <mat-icon class="sidenav-icon">dashboard</mat-icon> {{ 'Dashboard' | translate }}
+    </a>
+    <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/maps']">
+      <mat-icon class="sidenav-icon">bar_chart</mat-icon> Stations Map
+    </a>
+    <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/statistics']">
+      <mat-icon class="sidenav-icon">event_note</mat-icon> Statistics
+    </a>
+  </mat-nav-list>
+</div>

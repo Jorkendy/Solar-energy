@@ -1,0 +1,96 @@
+<div class="row">
+  <div class="col-3">
+    <mat-form-field>
+      <mat-label>Month</mat-label>
+      <mat-select [formControl]="month">
+        <mat-option [value]="1">
+          January
+        </mat-option>
+        <mat-option [value]="2">
+          February
+        </mat-option>
+        <mat-option [value]="3">
+          March
+        </mat-option>
+        <mat-option [value]="4">
+          April
+        </mat-option>
+        <mat-option [value]="5">
+          May
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col-3">
+    <mat-form-field>
+      <mat-label>Station</mat-label>
+      <mat-select [formControl]="station">
+        <mat-option [value]="'9e4052c9-cdd1-45af-9174-96dbaa1fd40e'">
+          Station 1
+        </mat-option>
+        <mat-option [value]="'e95d468b-8973-47a6-8700-4b2c538f38d5'">
+          Ho Chi Minh City University of Technology
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col-3">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target['value'])" placeholder="Filter">
+    </mat-form-field>
+  </div>
+</div>
+
+<h1>Voltage Average Statistics</h1>
+
+<div class="voltage-statistics">
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row['id']}} </td>
+      </ng-container>
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+        <td mat-cell *matCellDef="let row"> {{row['date']}} </td>
+      </ng-container>
+      <ng-container matColumnDef="voltage">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Voltage (V)</th>
+        <td mat-cell *matCellDef="let row"> {{row['voltage']}} </td>
+      </ng-container>
+      <ng-container matColumnDef="power">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Power (W) </th>
+        <td mat-cell *matCellDef="let row"> {{row['power']}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+      </tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
+</div>
+
+<h1>Temperature Average Statistics</h1>
+
+<div class="voltage-statistics">
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row['id']}} </td>
+      </ng-container>
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+        <td mat-cell *matCellDef="let row"> {{row['date']}} </td>
+      </ng-container>
+      <ng-container matColumnDef="temperature">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Temperature (<sup>o</sup>C) </th>
+        <td mat-cell *matCellDef="let row"> {{row['temperature']}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns2;">
+      </tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
+</div>
