@@ -10,6 +10,7 @@ import {authenticateUser} from "./middlewares/security/Passport";
 import {setupLogging, winstonLogger} from "./middlewares/common/WinstonLogger";
 
 import './controllers/authController';
+import './controllers/mailController';
 import {RegisterRoutes} from "./routes";
 
 class App {
